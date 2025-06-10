@@ -16,4 +16,12 @@ public class funcionarioModel {
 
     private String nome;
     private String email;
+    private String senha;
+    private String cep;
+    private String endereco;
+    private int numero;
+    private String bairro;
+    private String cidade;
+    private String estado;
+
 }
