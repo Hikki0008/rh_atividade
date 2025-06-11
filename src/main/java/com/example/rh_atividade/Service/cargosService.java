@@ -28,7 +28,7 @@ public class cargosService {
     }
 
     public void deletarCargo(Long id){
-        repository.deleteById(id);;
+        repository.deleteById(id);
     }
 
     public cargosModel atualizar (Long id, cargosModel cargos){

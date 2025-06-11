@@ -2,6 +2,7 @@ package com.example.rh_atividade.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class cargosController {
     private cargosService service;
 
     @PostMapping
-    public ResponseEntity<cargosModel> registrar(@RequestBody cargosModel cargos){
+    public ResponseEntity<cargosModel> registrarCargos(@RequestBody cargosModel cargos){
         return ResponseEntity.ok(service.registrar(cargos));
     }
 
@@ -40,5 +41,11 @@ public class cargosController {
     @PutMapping("/{id}")
     public ResponseEntity<cargosModel>atualizar(@PathVariable long id,@RequestBody cargosModel cargos){
         return ResponseEntity.ok(service.atualizar(id, cargos ));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void>deletarCargo(Long id){
+        service.deletarCargo(id);
+        return ResponseEntity.noContent().build(); 
     }
 }
